@@ -126,6 +126,11 @@ spec:
                     - UnescapeAndRedirect
                     type: string
                 type: object
+              perConnectionBufferLimitBytes:
+                description: 'PerConnectionBufferLimitBytes sets a soft limit on size
+                  of the cluster’s connections read and write buffers. Default: 32768.'
+                format: int32
+                type: integer
               targetRef:
                 description: TargetRef is the name of the Gateway resource this policy
                   is being attached to. This Policy and the TargetRef MUST be in the

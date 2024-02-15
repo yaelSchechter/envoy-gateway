@@ -88,6 +88,11 @@ type ClientTrafficPolicySpec struct {
 	//
 	// +optional
 	Timeout *ClientTimeout `json:"timeout,omitempty"`
+	// PerConnectionBufferLimitBytes sets a soft limit on size of the cluster’s connections read and write buffers.
+	// Default: 32768.
+	//
+	// +optional
+	PerConnectionBufferLimitBytes *uint32 `json:"perConnectionBufferLimitBytes,omitempty"`
 }
 
 // HeaderSettings providess configuration options for headers on the listener.

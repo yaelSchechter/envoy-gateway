@@ -1,7 +1,4 @@
-+++
-title = "API Reference"
-+++
-
+# API Reference
 
 ## Packages
 - [gateway.envoyproxy.io/v1alpha1](#gatewayenvoyproxyiov1alpha1)

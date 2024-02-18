@@ -128,8 +128,11 @@ spec:
                 type: object
               perConnectionBufferLimitBytes:
                 description: 'PerConnectionBufferLimitBytes sets a soft limit on size
-                  of the cluster’s connections read and write buffers. Default: 32768.'
-                format: int32
+                  of the listener’s new connection read and write buffers. Default:
+                  32768.'
+                format: int64
+                maximum: 4294967295
+                minimum: 0
                 type: integer
               targetRef:
                 description: TargetRef is the name of the Gateway resource this policy

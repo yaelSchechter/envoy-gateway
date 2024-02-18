@@ -498,7 +498,7 @@ func (in *ClientTrafficPolicySpec) DeepCopyInto(out *ClientTrafficPolicySpec) {
 	}
 	if in.PerConnectionBufferLimitBytes != nil {
 		in, out := &in.PerConnectionBufferLimitBytes, &out.PerConnectionBufferLimitBytes
-		*out = new(uint32)
+		*out = new(int64)
 		**out = **in
 	}
 }

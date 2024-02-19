@@ -152,6 +152,14 @@ spec:
                     - UnescapeAndRedirect
                     type: string
                 type: object
+              perConnectionBufferLimit:
+                anyOf:
+                - type: integer
+                - type: string
+                description: 'PerConnectionBufferLimit sets a soft limit on size of
+                  the listener’s new connection read and write buffers. Default: 32768.'
+                pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                x-kubernetes-int-or-string: true
               targetRef:
                 description: TargetRef is the name of the Gateway resource this policy
                   is being attached to. This Policy and the TargetRef MUST be in the

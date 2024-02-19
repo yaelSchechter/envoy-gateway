@@ -303,6 +303,23 @@ func TestClientTrafficPolicyTarget(t *testing.T) {
 			},
 			wantErrors: []string{},
 		},
+		{
+			desc: "valid perConnectionBufferLimitBytes",
+			mutate: func(ctp *egv1a1.ClientTrafficPolicy) {
+				limit := uint32(32768)
+				ctp.Spec = egv1a1.ClientTrafficPolicySpec{
+					TargetRef: gwapiv1a2.PolicyTargetReferenceWithSectionName{
+						PolicyTargetReference: gwapiv1a2.PolicyTargetReference{
+							Group: gwapiv1a2.Group("gateway.networking.k8s.io"),
+							Kind:  gwapiv1a2.Kind("Gateway"),
+							Name:  gwapiv1a2.ObjectName("eg"),
+						},
+					},
+					PerConnectionBufferLimitBytes: &limit,
+				}
+			},
+			wantErrors: []string{},
+		},
 	}
 
 	for _, tc := range cases {

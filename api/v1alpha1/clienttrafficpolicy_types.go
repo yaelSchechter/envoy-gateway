@@ -6,6 +6,7 @@
 package v1alpha1
 
 import (
+	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	gwapiv1a2 "sigs.k8s.io/gateway-api/apis/v1alpha2"
 )
@@ -88,13 +89,11 @@ type ClientTrafficPolicySpec struct {
 	//
 	// +optional
 	Timeout *ClientTimeout `json:"timeout,omitempty"`
-	// PerConnectionBufferLimitBytes sets a soft limit on size of the listener’s new connection read and write buffers.
+	// PerConnectionBufferLimit sets a soft limit on size of the listener’s new connection read and write buffers.
 	// Default: 32768.
 	//
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Maximum=4294967295
 	// +optional
-	PerConnectionBufferLimitBytes *int64 `json:"perConnectionBufferLimitBytes,omitempty"`
+	PerConnectionBufferLimit *resource.Quantity `json:"perConnectionBufferLimit,omitempty"`
 }
 
 // HeaderSettings providess configuration options for headers on the listener.

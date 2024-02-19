@@ -501,10 +501,10 @@ func (in *ClientTrafficPolicySpec) DeepCopyInto(out *ClientTrafficPolicySpec) {
 		*out = new(ClientTimeout)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.PerConnectionBufferLimitBytes != nil {
-		in, out := &in.PerConnectionBufferLimitBytes, &out.PerConnectionBufferLimitBytes
-		*out = new(int64)
-		**out = **in
+	if in.PerConnectionBufferLimit != nil {
+		in, out := &in.PerConnectionBufferLimit, &out.PerConnectionBufferLimit
+		x := (*in).DeepCopy()
+		*out = &x
 	}
 }
 

@@ -314,7 +314,7 @@ _Appears in:_
 | `http1` | _[HTTP1Settings](#http1settings)_ |  false  | HTTP1 provides HTTP/1 configuration on the listener. |
 | `headers` | _[HeaderSettings](#headersettings)_ |  false  | HeaderSettings provides configuration for header management. |
 | `timeout` | _[ClientTimeout](#clienttimeout)_ |  false  | Timeout settings for the client connections. |
-| `perConnectionBufferLimitBytes` | _integer_ |  false  | PerConnectionBufferLimitBytes sets a soft limit on size of the listener’s new connection read and write buffers. Default: 32768. |
+| `perConnectionBufferLimit` | _[Quantity](#quantity)_ |  false  | PerConnectionBufferLimit sets a soft limit on size of the listener’s new connection read and write buffers. Default: 32768. |
 
 
 
